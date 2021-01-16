@@ -1,3 +1,5 @@
+
+
 function menu_replace(number) {
     var menu = document.getElementById('menu')
     menu.className = 'd-none'
@@ -12,6 +14,7 @@ function menu_replace(number) {
         case '4':
             break;
         case '5':
+            contactForm()
             break;
         case '6':
             break;
@@ -34,3 +37,12 @@ function trackBox() {
     var trackBoxFragment = document.getElementById("trackBox");
     trackBoxFragment.classList.remove('d-none');
 } 
+
+function contactForm(){
+    var displayForm = document.getElementById('form');
+    displayForm.classList.remove('d-none');
+    var button = document.getElementById('send_button')
+    button.addEventListener('click', (event) => {
+      event.preventDefault()
+    })
+}
