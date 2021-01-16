@@ -17,6 +17,7 @@ function menu_replace(number) {
             contactForm()
             break;
         case '6':
+            oldBox();
             break;
     }
 
@@ -25,7 +26,7 @@ function menu_replace(number) {
 
 function goToMenu(fragmentToRemove) {
     var oldFragment = document.getElementById(fragmentToRemove);
-    oldFragment.className = "d-none";
+    oldFragment.classList.add("d-none")
     var menu = document.getElementById('menu');
     menu.classList.remove('d-none');
 }
@@ -36,13 +37,18 @@ function trackBox() {
     displayCode.innerText = Math.random().toString(36).toUpperCase().substring(3);
     var trackBoxFragment = document.getElementById("trackBox");
     trackBoxFragment.classList.remove('d-none');
-} 
+}
 
-function contactForm(){
+function contactForm() {
     var displayForm = document.getElementById('form');
     displayForm.classList.remove('d-none');
     var button = document.getElementById('send_button')
     button.addEventListener('click', (event) => {
-      event.preventDefault()
+        event.preventDefault()
     })
+}
+
+function oldBox(){
+    var oldBox = document.getElementById('oldBox')
+    oldBox.classList.remove('d-none')
 }

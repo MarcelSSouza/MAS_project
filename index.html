@@ -41,28 +41,70 @@
             <h1 class="whiteColor text-center" id="trackCode"></h1>
         </div>
     </div>
-    <form method="POST" action="https://formspree.io/f/xeqppyrk">
-        <div class="container d-none d-flex flex-column align-itens-center" id="form">
-            <span><i class="fas fa-chevron-left whiteColor" onclick="goToMenu('form')"></i></span>
-            <form>
-                <div class="form-group text-center">
-                    <h6 class="text-light">Email</h6>
-                    <input type="email" class="form-control" id="exampleFormControlInput1"
-                        placeholder="name@example.com">
-                </div>
-                <div class="form-group text-center">
-                    <h6 class="text-light mt-2">Mensagem</h6>
-                    <textarea class="form-control" id="exampleFormControlTextarea1" rows="3"
-                        placeholder="Digite a sua mensagem"></textarea>
-                </div>
-                <button type="submit" id='send_button' class="btn btn-outline-light mt-4">Enviar</button>
-            </form>
+    <div class="container">
+
+        <form method="POST" action="https://formspree.io/f/xeqppyrk">
+            <div class=" d-none d-flex flex-column align-itens-center" id="form">
+                <span><i class="fas fa-chevron-left whiteColor" onclick="goToMenu('form')"></i></span>
+                <form>
+                    <div class="form-group text-center">
+                        <h6 class="text-light">Email</h6>
+                        <input type="email" class="form-control" id="exampleFormControlInput1"
+                            placeholder="name@example.com">
+                    </div>
+                    <div class="form-group text-center">
+                        <h6 class="text-light mt-2">Mensagem</h6>
+                        <textarea class="form-control" id="exampleFormControlTextarea1" rows="3"
+                            placeholder="Digite a sua mensagem"></textarea>
+                    </div>
+                    <button type="submit" id='send_button' class="btn btn-outline-light mt-4">Enviar</button>
+                </form>
+            </div>
+        </form>
+
+    </div>
+    <div class="container card-deck text-center d-flex flex-column align-itens-center justify-content-center d-none "
+        id="oldBox">
+        <span><i class="fas fa-chevron-left whiteColor" style="margin-left:2px;" onclick="goToMenu('oldBox')"></i></span>
+        <div class="card mt-2 mb-2">
+            <img class="card-img-top" src="./Assets/receitas-de-halloween-para-pet-1076x605.jpeg" alt="Card image cap">
+            <div class="card-body">
+                <h5 class="card-title">Box Halloween</h5>
+                <p class="card-text">AuAu! As melhores gostosuras para o seu bichinho cair na travessura.</p>
+                <a href="#" class="btn btn-primary">Solicitar</a>
+            </div>
         </div>
-    </form>
+        <div class="card mb-2">
+            <img class="card-img-top" src="./Assets/bulldog-carnaval-canil-duas-marias.jpg" alt="Card image cap">
+            <div class="card-body">
+                <h5 class="card-title">Box Carnaval</h5>
+                <p class="card-text">Quack! A melhor fantasia para o seu bicho curtir o carnaval.</p>
+                <a href="#" class="btn btn-primary">Solicitar</a>
+            </div>
+        </div>
+        <div class="card mb-2">
+            <img class="card-img-top"
+                src="./Assets/Engra-ado-gato-cachorro-traje-uniforme-terno-roupas-de-gato-roupa-de-cachorro-roupas-de-vestir.jpg_q50.jpg"
+                alt="Card image cap">
+            <div class="card-body">
+                <h5 class="card-title">Box Aulas</h5>
+                <p class="card-text">Miau! O melhor uniforme para o seu pet.</p>
+                <a href="#" class="btn btn-primary">Solicitar</a>
+            </div>
+        </div>
+        <div class="card mb-2">
+            <img class="card-img-top" src="./Assets/download.jpeg" alt="Card image cap">
+            <div class="card-body">
+                <h5 class="card-title">Box Aniversário</h5>
+                <p class="card-text">AuAu! Parabéns para o seu bichinho.</p>
+                <a href="#" class="btn btn-primary">Solicitar</a>
+            </div>
+        </div>
+
+    </div>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/js/bootstrap.bundle.min.js"
         integrity="sha384-ygbV9kiqUc6oa4msXn9868pTtWMgiQaeYH7/t7LECLbyPA2x65Kgf80OJFdroafW"
         crossorigin="anonymous"></script>
-
     <script src="./index.js"></script>
 </body>
 

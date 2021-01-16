@@ -1,4 +1,4 @@
-body{
+body {
     background-color: #9351d5;
 }
 
@@ -6,6 +6,13 @@ body{
 .whiteColor {
     color: #ffffff;
 }
-#form{
+
+#form {
     margin: auto;
+}
+
+.card-img-top {
+    width: 100%;
+    height: 45vw;
+    object-fit: cover;
 }
