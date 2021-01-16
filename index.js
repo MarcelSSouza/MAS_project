@@ -1,9 +1,9 @@
 function menu_replace(number) {
     var menu = document.getElementById('menu')
     menu.className = 'd-none'
-    menu.className('display')
     switch (number) {
         case '1':
+            trackBox();
             break;
         case '2':
             break;
@@ -18,3 +18,19 @@ function menu_replace(number) {
     }
 
 }
+
+
+function goToMenu(fragmentToRemove) {
+    var oldFragment = document.getElementById(fragmentToRemove);
+    oldFragment.className = "d-none";
+    var menu = document.getElementById('menu');
+    menu.classList.remove('d-none');
+}
+
+
+function trackBox() {
+    var displayCode = document.getElementById("trackCode");
+    displayCode.innerText = Math.random().toString(36).toUpperCase().substring(3);
+    var trackBoxFragment = document.getElementById("trackBox");
+    trackBoxFragment.classList.remove('d-none');
+} 
