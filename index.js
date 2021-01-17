@@ -52,3 +52,8 @@ function oldBox(){
     var oldBox = document.getElementById('oldBox')
     oldBox.classList.remove('d-none')
 }
+
+//Função para enviar email pedindo novo produto
+function sendEmail()
+{
+}
