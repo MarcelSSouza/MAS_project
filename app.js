@@ -3,8 +3,9 @@ var express = require("express"),
 	passport = require("passport"),
 	bodyParser = require("body-parser"),
 	LocalStrategy = require("passport-local"),
-	passportLocalMongoose =
-		require("passport-local-mongoose"),
+	bcrypt = require('bcryptjs')
+passportLocalMongoose =
+	require("passport-local-mongoose"),
 	User = require("./models/user");
 
 mongoose.set('useNewUrlParser', true);
@@ -54,13 +55,15 @@ app.get("/register", function (req, res) {
 app.post("/register", function (req, res) {
 	var username = req.body.username
 	var password = req.body.password
-	User.register(new User({ username: username }),
-		password, function (err, user) {
+
+	User.register(new User({ username: username, Password: password }),password,
+		function (err, user) {
 			if (err) {
 				alert(err);
 				return res.render("register");
 			}
 			else {
+
 				res.render("login")
 			}
 		});
@@ -74,33 +77,47 @@ app.get("/login", function (req, res) {
 //Handling user login 
 app.post("/login", (req, res) => {
 	var username = req.body.username
+	var password = req.body.password
 	User.findOne({ username: username })
 		.exec(function (error, user) {
 			if (error) {
+				res.render("login")
 				return callback(error)
 			} else if (!user) {
 				console.log('User not found!');
 				res.render("login")
 			}
 			else {
-				res.render("secret")
+				User.findOne({ Password: password })
+					.exec(function (error, user) {
+						if (error) {
+							res.render("login")
+							return callback(error)
+						} else if (!user) {
+							console.log('User not found!');
+							res.render("login")
+						} else {
+
+							res.render("secret")
+
+						}
+
+					})
 			}
-		})})
+		})
+})
+//Handling user logout 
+app.get("/logout", function (req, res) {
+	req.logout();
+	res.redirect("/");
+});
 
+function isLoggedIn(req, res, next) {
+	if (req.isAuthenticated()) return next();
+	res.redirect("/login");
+}
 
-
-	//Handling user logout 
-	app.get("/logout", function (req, res) {
-		req.logout();
-		res.redirect("/");
-	});
-
-	function isLoggedIn(req, res, next) {
-		if (req.isAuthenticated()) return next();
-		res.redirect("/login");
-	}
-
-	var port = process.env.PORT || 3000;
-	app.listen(port, function () {
-		console.log("Server Has Started!");
-	})
+var port = process.env.PORT || 3000;
+app.listen(port, function () {
+	console.log("Server Has Started!");
+})
