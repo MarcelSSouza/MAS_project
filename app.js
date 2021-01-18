@@ -52,22 +52,28 @@ app.get("/register", function (req, res) {
 });
 
 // Handling user signup 
-app.post("/register", function (req, res) {
-	var username = req.body.username
-	var password = req.body.password
+app.post("/register", async function (req, res) {
+	try {
+		const salt = await bcrypt.genSalt()
+		var username = req.body.username
+		var password = req.body.password
+		var hashedPassword = await bcrypt.hash(password, salt)
+		User.register(new User({ username: username, Password: hashedPassword }), password,
+			function (err, user) {
+				if (err) {
+					alert(err);
+					return res.render("register");
+				}
+				else {
 
-	User.register(new User({ username: username, Password: password }),password,
-		function (err, user) {
-			if (err) {
-				alert(err);
-				return res.render("register");
-			}
-			else {
-
-				res.render("login")
-			}
-		});
-});
+					res.render("login")
+				}
+			})
+	}
+	catch {
+		res.status(500).send()
+	}
+})
 
 //Showing login form 
 app.get("/login", function (req, res) {
@@ -75,7 +81,7 @@ app.get("/login", function (req, res) {
 });
 
 //Handling user login 
-app.post("/login", (req, res) => {
+app.post("/login", async (req, res) => {
 	var username = req.body.username
 	var password = req.body.password
 	User.findOne({ username: username })
@@ -87,22 +93,13 @@ app.post("/login", (req, res) => {
 				console.log('User not found!');
 				res.render("login")
 			}
+			else if (user == null) {
+				return res.status(400).send("Cant find the user")
+			}
 			else {
-				User.findOne({ Password: password })
-					.exec(function (error, user) {
-						if (error) {
-							res.render("login")
-							return callback(error)
-						} else if (!user) {
-							console.log('User not found!');
-							res.render("login")
-						} else {
-
-							res.render("secret")
-
-						}
-
-					})
+				if (bcrypt.compare(password, user.Password)) {
+					res.render("secret")
+				}
 			}
 		})
 })
