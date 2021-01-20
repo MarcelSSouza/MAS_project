@@ -2,7 +2,7 @@ Para acessar o projeto é necessário ter o MongoDB instalado E RODANDO em sua m
 
 Além disso, é preciso ter o NPM e o NODEJS instalados, para isso acesse https://nodejs.org/en/download/ e https://www.npmjs.com/get-npm
 
-Ao fim, deve acessar a pasta principal do projeto e rodar o comando NODE APP.JS
+Ao fim, deve acessar a pasta principal do projeto e rodar o comando NPM I e logo depois de instalar os pacotes necessarios, rode o comando NODE APP.JS
 
 Lembre-se, é preciso que o MongoDB esteja rodando em background.
 
