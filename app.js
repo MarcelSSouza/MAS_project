@@ -80,6 +80,9 @@ app.get("/login", function (req, res) {
 	res.render("login");
 });
 
+app.get("/formBox", function (req, res) {
+	res.render("formBox");
+});
 //Handling user login 
 app.post("/login", async (req, res) => {
 	var username = req.body.username
@@ -107,6 +110,10 @@ app.post("/login", async (req, res) => {
 app.get("/logout", function (req, res) {
 	req.logout();
 	res.redirect("/");
+});
+
+app.get("/menu", function (req, res) {
+	res.render('secret')
 });
 
 function isLoggedIn(req, res, next) {

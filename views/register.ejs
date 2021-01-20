@@ -36,36 +36,36 @@
             object-fit: cover;
         }
     </style>
-    <div class="container d-flex flex-column align-itens-center justify-content-center">
+    <div class="container d-flex flex-column align-itens-center justify-content-center text-center">
         <h2 class="text-center text-light mt-2">PetCave</h2>
         <img src="/Assets/2306.jpg" style="width: 15em; margin: 0 auto; border-radius: 50%; margin-bottom: 15px;">
         <h6 class="text-center text-light">A melhor app para o seu pet.</h6>
-        <form method="POST" action="/register">
+        <form method="POST" class="container d-flex flex-column align-itens-center justify-content-center"action="/register">
             <div class="form-group">
-                <input type="email" class="form-control mb-3" aria-describedby="emailHelp" placeholder="Email do dono"
+                <input required type="email" class="form-control mb-3 text-center" aria-describedby="emailHelp" placeholder="Email do dono"
                     name="username">
             </div>
             <div class="form-group">
-                <input type="password" class="form-control mb-3" placeholder="Password do dono" name="password">
+                <input required type="password" class="form-control mb-3 text-center" placeholder="Password do dono" name="password">
             </div>
             <div class="form-group">
-                <input type="text" class="form-control mb-3" aria-describedby="emailHelp" placeholder="Idade do pet"
+                <input required type="text" class="form-control mb-3 text-center" aria-describedby="emailHelp" placeholder="Idade do pet"
                     name="idade_pet">
             </div>
             <div class="form-group">
-                <input type="text" class="form-control mb-3" aria-describedby="emailHelp"
+                <input required type="text" class="form-control mb-3 text-center" aria-describedby="emailHelp"
                     placeholder="M/F (Macho ou Fêmea)" name="sexo_pet">
             </div>
             <div class="form-group">
-                <input type="text" class="form-control mb-3" aria-describedby="emailHelp" placeholder="Peso do pet"
+                <input required type="text" class="form-control mb-3 text-center" aria-describedby="emailHelp" placeholder="Peso do pet"
                     name="peso_pet">
             </div>
             <div class="form-group">
-                <input type="text" class="form-control mb-3" aria-describedby="emailHelp" placeholder="Espécie do pet"
+                <input required type="text" class="form-control mb-3 text-center" aria-describedby="emailHelp" placeholder="Espécie do pet"
                     name="especie_pet">
             </div>
             <div class="form-group">
-                <input type="text" class="form-control mb-3" aria-describedby="emailHelp" placeholder="Raça do pet"
+                <input required type="text" class="form-control mb-3 text-center" aria-describedby="emailHelp" placeholder="Raça do pet"
                     name="raca_pet">
             </div>
             <button type="submit" value="registrar" class="btn btn-primary">Registrar</button>
