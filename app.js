@@ -61,9 +61,10 @@ app.post("/register", async function (req, res) {
 		var especie_pet = req.body.especie_pet
 		var sexo_pet = req.body.sexo_pet
 		var raca_pet = req.body.raca_pet
+		var endereco_dono = req.body.endereco_dono
 		var idade_pet = req.body.idade_pet
 		var hashedPassword = await bcrypt.hash(password, salt)
-		User.register(new User({ username: username, Password: hashedPassword, peso: peso_pet, especie: especie_pet, sexo: sexo_pet, raca: raca_pet, idade: idade_pet }), password,
+		User.register(new User({ username: username, Password: hashedPassword, peso: peso_pet, especie: especie_pet, sexo: sexo_pet, raca: raca_pet, idade: idade_pet, endereco: endereco_dono }), password,
 			function (err, user) {
 				if (err) {
 					alert(err);

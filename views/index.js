@@ -9,8 +9,10 @@ function menu_replace(number) {
         case '2':
             break;
         case '3':
+          alimentar()
             break;
         case '4':
+          veterinario()
             break;
         case '5':
             contactForm()
@@ -42,8 +44,24 @@ function contactForm() {
     var button = document.getElementById('send_button')
     button.addEventListener('click', (event) => {
         event.preventDefault()
-    })
+    }) 
 }
+
+function veterinario(){
+  var displayForm = document.getElementById('form2');
+  displayForm.classList.remove('d-none');
+  var button = document.getElementById('send_button2')
+  button.addEventListener('click', (event) => {
+      event.preventDefault()
+  })
+}
+
+
+function alimentar(){
+  var displayForm = document.getElementById('alimentar');
+  displayForm.classList.remove('d-none');
+}
+
 
 function oldBox() {
     var oldBox = document.getElementById('oldBox')

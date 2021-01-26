@@ -7,7 +7,8 @@ var UserSchema = mongoose.Schema({
     sexo: String,
     raca: String,
     idade: String,
-    especie: String
+    especie: String,
+    endereco: String
 });
 
 UserSchema.plugin(passportlocalmongoose);
